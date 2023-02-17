@@ -7,6 +7,8 @@ function fetchMovie() {
   const key = "b186333";
   if (movieName.length <= 0) {
     movie.innerHTML = `<h2 class="error">Please, enter a valid movie</h2>`;
+  } else if (movieName.value == "") {
+    movie.innerHTML = `<div><h2 class="enter">Enter a movie!</h2></div>`;
   } else {
     fetch(`http://www.omdbapi.com/?t=${nameOfMovie}&apikey=${key}`)
       .then((response) => response.json())
@@ -14,16 +16,13 @@ function fetchMovie() {
         if (data.Response == "True") {
           movie.innerHTML = `<div class="movie-info">
                 <img src=${data.Poster} class="poster" >
-                <div class="rating">
-                    <h2>${data.imdbRating}</h2>
-                </div>
                 <div class="title-plot">
                 <h2>${data.Title}</h2>
                 <p>${data.Plot}</p>
                 </div>
                 <div class="info-list">
                     <ul>
-                        
+                        <li>Rating: ${data.imdbRating}</li>
                         <li>Release: ${data.Released}</li>
                         <li>Type: ${data.Type}</li>
                         <li>Writer: ${data.Writer}</li>

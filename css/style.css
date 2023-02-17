@@ -6,57 +6,68 @@
   font-family: "Poppins", sans-serif;
 }
 
-body {
-  height: 100vh;
-  background: linear-gradient(180deg, #a6a6b0, #817f84);
-}
-
 .container {
   box-shadow: 18px, 32px, 48px rgba(0, 0, 0, 0.2);
   width: 30vw;
   height: 900px;
   background-color: #fff;
-  padding: 3rem 1.8rem;
   position: absolute;
   transform: translate(-50%, -50%);
   top: 50%;
   left: 50%;
-  border-radius: 10px;
+  border-radius: 20px;
 }
-.container .search-bar {
-  color: #161616;
+.container .main {
+  z-index: 0;
+  height: 30%;
+  border-radius: 20px;
+  background-color: #5ba1d2;
+  padding-top: 5rem;
+  text-align: center;
+  color: #f3f3f3;
+}
+.container .main .search-bar {
+  margin-top: 2rem;
+  color: #f3f3f3;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 1rem;
+  gap: 0.2rem;
 }
-.container .search-bar input,
-.container .search-bar button {
+.container .main .search-bar input,
+.container .main .search-bar button {
   font-size: 16px;
   outline: none;
   border-radius: 4px;
-  transition: 0.5s ease;
+  transition: 0.3s ease;
+  color: #f3f3f3;
 }
-.container .search-bar input {
-  padding: 8px 40px;
-  background-color: transparent;
-  border: 2px solid #7a7a7a;
-}
-.container .search-bar input:focus {
-  border-color: #2474f4;
-}
-.container .search-bar button {
+.container .main .search-bar input {
+  border-radius: 50px;
+  padding: 5px 40px;
+  background-color: #8fbde1;
   border: none;
-  background-color: #2474f4;
-  padding: 10px 40px;
+}
+.container .main .search-bar input:focus {
+  background-color: #2c3949;
+}
+.container .main .search-bar input::placeholder {
+  color: #f3f3f3;
+}
+.container .main .search-bar button {
+  border: none;
+  background-color: #8fbde1;
+  padding: 10px 15px;
+  border-radius: 50%;
   cursor: pointer;
   color: #f3f3f3;
 }
-.container .search-bar button:hover {
-  background-color: #284fc4;
+.container .main .search-bar button:hover {
+  background-color: #2c3949;
 }
 
-.error {
+.error,
+.enter {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -64,22 +75,28 @@ body {
 }
 
 .movie-info {
+  z-index: 1;
+  background-color: #2c3949;
+  color: #f3f3f3;
   position: relative;
   margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  bottom: 50px;
+  border-radius: 20px;
+  padding-top: 20px;
 }
 .movie-info .poster {
-  width: 60%;
+  width: 35%;
 }
 .movie-info .rating {
+  display: flex;
+  justify-content: center;
   margin-top: 5px;
-  background-color: #2474f4;
-  border-radius: 50%;
+  width: 100%;
   padding: 10px;
-  color: #f3f3f3;
 }
 .movie-info .title-plot {
   margin-top: 2rem;
@@ -91,9 +108,10 @@ body {
   gap: 0.3rem;
 }
 .movie-info .info-list {
+  width: 100%;
   display: flex;
   align-items: flex-start;
-  margin-top: 2rem;
+  padding: 2rem 0rem 2rem 1.5rem;
 }
 .movie-info .info-list ul li {
   list-style: none;
