@@ -2,6 +2,7 @@ const movieName = document.getElementById("movie-name");
 const btn = document.getElementById("btn");
 const movie = document.getElementById("movie");
 
+// usando una funzione per fare il fetch, inglobato tutto nella funzione stessa per renderlo più veloce
 function fetchMovie() {
   const nameOfMovie = movieName.value;
   const key = "b186333";
